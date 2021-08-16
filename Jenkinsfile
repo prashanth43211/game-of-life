@@ -13,7 +13,11 @@ pipeline {
    stage('git clone') {
          steps {
             // Get some code from a GitHub repository
-          sh  'git clone https://github.com/prashanth43211/game-of-life.git'
+		 
+          sh  '''
+          sudo git init
+	  sudo git clone https://github.com/prashanth43211/game-of-life.git
+          '''
         }
         
         }
