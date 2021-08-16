@@ -12,13 +12,8 @@ pipeline {
    {
    stage('git clone') {
          steps {
-            // Get some code from a GitHub repository
-		 
-          sh  '''
-	  sudo sudo rm -rf /home/ubuntu/Copy/try
-          sudo git init
-	  sudo git clone https://github.com/prashanth43211/game-of-life.git
-          '''
+            // Get some code from a GitHub repository		 
+         git 'https://github.com/prashanth43211/game-of-life.git'
         }
         
         }
