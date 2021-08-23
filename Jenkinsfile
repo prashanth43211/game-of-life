@@ -18,7 +18,7 @@ pipeline {
    } 
    stages
    {
-   stage('git clone') {
+   stage('Git clone') {
          steps {
             // Get some code from a GitHub repository
             git 'https://github.com/prashanth43211/game-of-life.git'
