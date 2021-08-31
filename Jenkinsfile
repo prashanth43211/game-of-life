@@ -53,6 +53,8 @@ pipeline {
          steps {
            sh '''
            cd ${WORKSPACE} 
+	   sudo groupadd docker
+	   sudo usermod -aG docker $USER
 	   docker build -t chinniprashantg43211/test:v4 .
 	   
            '''
