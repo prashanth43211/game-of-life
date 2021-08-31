@@ -49,5 +49,14 @@ pipeline {
 	
 	}
 	} 
+   stage ('Docker build') {
+         steps {
+           sh '''
+           cd ${WORKSPACE} 
+	   docker build -t chinniprashantg43211/test:v4 .
+	   
+           '''
+         }
+      }
    }
 }
