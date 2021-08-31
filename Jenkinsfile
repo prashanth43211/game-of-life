@@ -49,14 +49,18 @@ pipeline {
 	
 	}
 	} 
-   stage ('Docker build') {
+    stage ('Docker build') {
          steps {
            sh '''
-           cd ${WORKSPACE} 
-	   sudo groupadd docker
-	   sudo usermod -aG docker $USER
-	   docker build -t chinniprashantg43211/test:v4 .
-	   
+	       docker build -t chinniprashantg43211/test:v4 .
+           '''
+         }
+      }
+      stage ('Docker publish') {
+         steps {
+           sh '''
+           docker login -u="chinniprashantg43211" -p="Prashanth43211"
+	       docker push chinniprashantg43211/test:v4
            '''
          }
       }
