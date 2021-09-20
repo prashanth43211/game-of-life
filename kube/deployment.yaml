@@ -1,7 +1,7 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: nginx
+  name: test
 spec:
   strategy:
     type: Recreate
@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx
+      - name: test
+        image: gcr.io/arctic-robot-325810/nikitha19:v1
         ports:
         - containerPort: 80
